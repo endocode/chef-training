@@ -1,0 +1,3 @@
+[submodule "slides/introduction_to_chef"]
+	path = slides/introduction_to_chef
+	url = https://github.com/nathenharvey/surge_introduction_to_chef.git
