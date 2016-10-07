@@ -1,0 +1,14 @@
+DEPENDENCIES
+  chocolatey
+  windows
+  windows-example
+    path: .
+    metadata: true
+
+GRAPH
+  chocolatey (1.0.3)
+    windows (>= 1.38)
+  windows (2.0.2)
+  windows-example (0.0.1)
+    chocolatey (>= 0.0.0)
+    windows (>= 0.0.0)
