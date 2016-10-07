@@ -1,3 +1,6 @@
 [submodule "slides/introduction_to_chef"]
 	path = slides/introduction_to_chef
 	url = https://github.com/nathenharvey/surge_introduction_to_chef.git
+[submodule "slides/pre_essentials"]
+	path = slides/pre_essentials
+	url = https://github.com/chef-training/Pre-Essentials.git
