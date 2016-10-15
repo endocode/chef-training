@@ -4,3 +4,6 @@
 [submodule "slides/pre_essentials"]
 	path = slides/pre_essentials
 	url = https://github.com/chef-training/Pre-Essentials.git
+[submodule "slides/chef-fundamentals-windows"]
+	path = slides/chef-fundamentals-windows
+	url = https://github.com/chef-training/chef-fundamentals-windows.git
