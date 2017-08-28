@@ -1,14 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# requires vagrant-winrm, vagrant-triggers plugin
+# requires vagrant-winrm, vagrant-triggers plugin, vagrant-berkshelf and installed CHEFDK
 
-# change this to match the interface you want to use
-BRIDGE_INTERFACE = 'en0: WLAN (AirPort)'
 # adapt number of students VMs
-STUDENTS = 2
-# box that is used for all VMs
-BOX = "opentable/win-2012r2-standard-amd64-nocm"
+STUDENTS = 1
 
 Vagrant.configure(2) do |config|
 
@@ -17,7 +13,7 @@ Vagrant.configure(2) do |config|
 
   (1..STUDENTS).each do |i|
     config.vm.define "student#{i}".to_sym do |student|
-      student.vm.box = BOX
+      student.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
 
       config.vm.network :forwarded_port, guest: 3389, host: 2200, auto_correct: true
 
