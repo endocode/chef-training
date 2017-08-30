@@ -17,8 +17,10 @@ Vagrant.configure("2") do |config|
     config.vm.define "student#{i}".to_sym do |student|
       student.vm.box = "ubuntu/trusty64"
       student.vm.provider 'virtualbox' do |vb|
-        vb.customize ['modifyvm', :id, '--memory', '512']
+        vb.customize ['modifyvm', :id, '--memory', '1024']
+        vb.linked_clone = true
       end
+      student.vm.network :forwarded_port, guest: 22, host: 2222, host_ip: "0.0.0.0", id: "ssh", auto_correct: true
       student.vm.provision "shell", inline: "dpkg -i /vagrant/chefdk_0.18.30-1_amd64.deb"
     end
   end
