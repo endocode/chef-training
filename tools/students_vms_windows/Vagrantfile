@@ -4,7 +4,7 @@
 # requires vagrant-winrm, vagrant-triggers plugin, vagrant-berkshelf and installed CHEFDK
 
 # adapt number of students VMs
-STUDENTS = 1
+STUDENTS = 12
 
 Vagrant.configure(2) do |config|
 
@@ -18,7 +18,7 @@ Vagrant.configure(2) do |config|
       config.vm.network :forwarded_port, guest: 3389, host: 2200, auto_correct: true
 
       student.vm.provider 'virtualbox' do |vb|
-        vb.customize ['modifyvm', :id, '--memory', '1024']
+        vb.customize ['modifyvm', :id, '--memory', '2048']
         vb.linked_clone = true
       end
 
